@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "build": "rollup -c rollup.pr.es.js && rollup -c rollup.pr.min.js",
+    "build-demo": "rollup -c ./demo/es/demo.rollup.js",
     "_transpile-test": "rollup -c rollup.test.js",
     "test": "npm run _transpile-test && mocha",
     "coverage": "cross-env NODE_ENV=test nyc npm test",

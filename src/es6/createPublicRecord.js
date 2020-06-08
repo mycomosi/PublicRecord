@@ -4,9 +4,9 @@
  */
 import {PublicRecordCls} from "./PublicRecordCls";
 import * as S from './public-strings';
+import moduleMethods from './publicMethods';
 
-export function thePublicRecord(options) {
-
+export function createPublicRecord(options) {
     function setOptions(options) {
         return class PublicRecordComponent extends HTMLElement {
 
@@ -72,8 +72,11 @@ export function thePublicRecord(options) {
             // attributeChangedCallback() {
             //
             // }
-        }
+        };
     }
 
     window.customElements.define(S.PUBLIC_RECORD_COMPONENT, setOptions(options));
+    return moduleMethods(document.createElement(S.PUBLIC_RECORD_COMPONENT));
+
+
 }

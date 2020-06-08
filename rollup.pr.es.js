@@ -2,9 +2,9 @@ import eslint from 'rollup-plugin-eslint';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-    input: 'src/es6/main.js',
+    input: 'src/es6/createPublicRecord.js',
     output: {
-        file: 'dist/thePublicRecord.js',
+        file: 'dist/createPublicRecord.js',
         format: 'es',
         sourcemap: false
     },
