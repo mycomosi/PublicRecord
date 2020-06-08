@@ -1,0 +1,23 @@
+{
+    "presets": [
+        [
+            "es2015",
+            {
+                "modules": false
+            }
+        ]
+    ],
+    "plugins": [
+        "external-helpers",
+        "transform-custom-element-classes",
+        "transform-es2015-classes"
+    ],
+    "ignore": [
+        "node_modules/**"
+    ],
+    "env": {
+        "test": {
+            "plugins": [ "istanbul" ]
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "public-record",
+  "version": "0.0.1",
+  "description": "Public logging library and web component which keeps a public record of log messages and data",
+  "main": "dist/public-record.js",
+  "files": [
+    "dist/public-record.js",
+    "dist/public-record.min.js"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.pr.es.js && rollup -c rollup.pr.min.js",
+    "_transpile-test": "rollup -c rollup.test.js",
+    "test": "npm run _transpile-test && mocha",
+    "coverage": "cross-env NODE_ENV=test nyc npm test",
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "devDependencies": {
+    "babel-plugin-istanbul": "^4.0.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babelrc-rollup": "^3.0.0",
+    "chai": "^3.5.0",
+    "cross-env": "^3.1.4",
+    "docdash": "^0.4.0",
+    "jsdoc": "^3.5.5",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
+    "rollup": "^0.52.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-json": "^2.1.1",
+    "rollup-plugin-multi-entry": "^2.0.2",
+    "rollup-plugin-node-resolve": "2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "sinon": "^2.4.1"
+  },
+  "dependencies": {
+    "css-element-queries": "^0.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mycomosi/public-record.git"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ]
+  },
+  "keywords": [
+    "logging",
+    "webcomponent",
+    "sharedworker"
+  ],
+  "author": "Russ Stratfull",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mycomosi/public-record/issues"
+  },
+  "homepage": "https://github.com/mycomosi/public-record#readme"
+}
