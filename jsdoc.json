@@ -5,10 +5,11 @@
   },
   "source": {
     "include": [
-      "src/",
+      "src/es6/",
       "./README.md"
     ]
   },
+  "sourceType": "module",
   "opts": {
     "destination": "./doc/",
 		"template": "node_modules/docdash"

@@ -6,9 +6,10 @@
  */
 export default function (component) {
     return {
+
         /**
          *
-         * @param options
+         * @param {Object} options
          * @return {*|any}
          */
         setOptions: (options) => {
