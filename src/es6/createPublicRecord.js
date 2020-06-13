@@ -1,6 +1,6 @@
 /**
  *  <public-record> Public recording web component
- *  @Author: Russ Stratfull
+ *  @Author: Russ Stratfull 2020
  */
 import {PublicRecordCls} from "./PublicRecordCls";
 import * as S from './public-strings';

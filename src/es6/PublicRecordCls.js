@@ -1,7 +1,10 @@
-
+/**
+ * Public Record Main Class
+ * This class exposes the web component main class core instance which is used by all distributions of the utility
+ * @Author Russ Stratfull 2020
+ */
 import * as S from './public-strings';
 export class PublicRecordCls {
-
 
     constructor() {
         this._options = {

@@ -1,5 +1,9 @@
-
-
+/**
+ * Public Record Utility API of public methods
+ * @param component
+ * @return {{component: (function(): *), printMessages(*=, *=): (*|string), logMessage: (function(*=, *=, ...[*]): (*|string)), setOptions: (function(*=): (*|any)), getOptions(): *, clearMessages(): void}|*|string|*}
+ * @Author Russ Stratfull 2020
+ */
 export default function (component) {
     return {
         /**
