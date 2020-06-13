@@ -22,4 +22,11 @@ publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);
 </code></pre>
 
 
-
+## Getting Started
+To begin, clone this project and run
+<pre><code>
+npm install
+npm run release
+</code></pre>
+Then, run a web server such as http-server
+Go to the root of the project to read the documentation

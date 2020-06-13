@@ -275,6 +275,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    - Web component <public-record> reference to append to dom
+</div>
+
 
 
 <dl class="param-type">
@@ -297,7 +301,7 @@
 
     
 
-    <h4 class="name" id="getOptions"><span class="type-signature"></span>getOptions<span class="signature">()</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id="getOptions"><span class="type-signature"></span>getOptions<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
@@ -373,6 +377,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    options object
+</div>
+
 
 
 <dl class="param-type">
@@ -381,7 +389,7 @@
     </dt>
     <dd>
         
-<span class="param-type">*</span>
+<span class="param-type">Object</span>
 
 
     </dd>
@@ -486,13 +494,18 @@
 
             <td class="type">
             
+                
+<span class="param-type">String</span>
+
+
+            
             </td>
 
             
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Log level of message (error, warn, info, debug, log)</td>
         </tr>
 
     
@@ -503,6 +516,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
             
             </td>
 
@@ -522,13 +540,18 @@
 
             <td class="type">
             
+                
+<span class="param-type">*</span>
+
+
+            
             </td>
 
             
 
             
 
-            <td class="description last"></td>
+            <td class="description last">additional arguments such as strings, objects, and numbers to replace in the message</td>
         </tr>
 
     
@@ -573,7 +596,7 @@
 
     
 
-    <h4 class="name" id="printMessages"><span class="type-signature"></span>printMessages<span class="signature">(options, filters)</span><span class="type-signature"> &rarr; {*|string}</span></h4>
+    <h4 class="name" id="printMessages"><span class="type-signature"></span>printMessages<span class="signature">(options, filters)</span><span class="type-signature"> &rarr; {String}</span></h4>
 
     
 
@@ -664,6 +687,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Object</span>
+
+
+            
             </td>
 
             
@@ -681,6 +709,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
             
             </td>
 
@@ -711,6 +744,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    - Concatinated, formatted, string of all messages in buffer currently
+</div>
+
 
 
 <dl class="param-type">
@@ -719,10 +756,7 @@
     </dt>
     <dd>
         
-<span class="param-type">*</span>
-|
-
-<span class="param-type">string</span>
+<span class="param-type">String</span>
 
 
     </dd>
@@ -736,7 +770,7 @@
 
     
 
-    <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions<span class="signature">(options)</span><span class="type-signature"> &rarr; {*|any}</span></h4>
+    <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions<span class="signature">(options)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 
@@ -786,6 +820,10 @@
 
 
 
+
+<div class="description">
+    Set options (configuration) into the utility
+</div>
 
 
 
@@ -838,7 +876,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">For more details, see type definition for "options" below</td>
         </tr>
 
     
@@ -869,10 +907,7 @@
     </dt>
     <dd>
         
-<span class="param-type">*</span>
-|
-
-<span class="param-type">any</span>
+<span class="param-type">Object</span>
 
 
     </dd>
@@ -889,7 +924,7 @@
 
         
                 
-<h4 class="name" id="defaultOptions">defaultOptions</h4>
+<h4 class="name" id="options">options</h4>
 
 
 
@@ -979,7 +1014,124 @@
 
             
 
-            <td class="description last">Level of logging to apply utility to (types not enabled are ignored)</td>
+            <td class="description last">Level of logging to apply utility to (types not enabled are ignored)
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Error level log messages</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>warn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Warning level log messages</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>info</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Info level log messages</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>log</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Log level log messages</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1002,7 +1154,56 @@
 
             
 
-            <td class="description last">Limit applied to buffer of messages held in memory</td>
+            <td class="description last">Maximum size of lot messages to keep in browser buffer before deleting them</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sharedWorker</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Enable sharedworker (puts all windows into one stream of logging</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sharedCallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">false</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Callback funtion to run on ALL messages being managed in publicRecord</td>
         </tr>
 
     
@@ -1015,7 +1216,7 @@
 
 
 <div class="description">
-    Default options
+    Options
 </div>
 
 
@@ -1032,6 +1233,23 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Default options configuration
+ {
+    loglevel: {
+        error: true,
+        warn: true,
+        info: true,
+        debug: false,
+        log: false
+    },
+    bufferLimit: 2000,
+    sharedWorker: false,
+    sharedCallback: false
+}</code></pre>
 
 
 
@@ -1051,7 +1269,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Sat Jun 13 2020 09:24:24 GMT+0200 (CEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Sat Jun 13 2020 10:33:46 GMT+0200 (CEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

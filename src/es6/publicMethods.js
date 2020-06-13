@@ -8,9 +8,9 @@ export default function (component) {
     return {
 
         /**
-         *
-         * @param {Object} options
-         * @return {*|any}
+         * Set options (configuration) into the utility
+         * @param {Object} options - For more details, see type definition for "options" below
+         * @return {Object}
          */
         setOptions: (options) => {
             return component.setOptions(options);
@@ -18,7 +18,7 @@ export default function (component) {
 
         /**
          *
-         * @return {*}
+         * @return {Object} options object
          */
         getOptions() {
             return component.getOptions();
@@ -26,9 +26,9 @@ export default function (component) {
 
         /**
          *
-         * @param level
-         * @param message
-         * @param args
+         * @param {String} level - Log level of message (error, warn, info, debug, log)
+         * @param {String} message
+         * @param {*} args - additional arguments such as strings, objects, and numbers to replace in the message
          * @return {string}
          */
         logMessage: (level, message, ...args) => {
@@ -37,9 +37,9 @@ export default function (component) {
 
         /**
          *
-         * @param options
-         * @param filters
-         * @return {*|string}
+         * @param {Object} options
+         * @param {Array} filters
+         * @return {String} - Concatinated, formatted, string of all messages in buffer currently
          */
         printMessages(options, filters) {
             return component.printMessages(options, filters);
@@ -54,7 +54,7 @@ export default function (component) {
 
         /**
          *
-         * @return {HTMLElement}
+         * @return {HTMLElement} Web component <public-record> reference to append to dom
          */
         component: () => {
             return component;
