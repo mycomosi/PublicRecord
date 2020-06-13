@@ -22,6 +22,4 @@ publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);
 </code></pre>
 
 
-## Demos
-- [Linked to index.html](../demo/iife/)
-- [Es6 module](../demo/es/)
+
