@@ -14,6 +14,17 @@ describe('PublicRecordCls', function () {
     global.Date = {
         now: () => {return 'now';} // Replace actual timestamp with constant value
     };
+    let console = {
+        error: sinon.spy(),
+        warn: sinon.spy(),
+        info: sinon.spy(),
+        debug: sinon.spy(),
+        log: sinon.spy(),
+        dir: sinon.spy()
+    };
+    global.window = {
+        console: console
+    };
 
     it(`should set 2 options and then get options`, function () {
 
@@ -80,8 +91,8 @@ describe('PublicRecordCls', function () {
         // given
 
         // when
-        PublicRecord = new PublicRecordCls();
-        PublicRecord.clearMessages();
+        // PublicRecord = new PublicRecordCls();
+        // PublicRecord.clearMessages();
 
         // then
         // Nothing yet to test for

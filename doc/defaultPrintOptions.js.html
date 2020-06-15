@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>defaultPrintOptions.js - Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -27,56 +27,59 @@
 
 <div id="main">
     
+    <h1 class="page-title">defaultPrintOptions.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ *
+ * @typedef {Object} defaultPrintOptions
+ * @property {Object} replacers
+ * @property {Object} replacers.string
+ * @property {Boolean} replacers.string.console
+ * @property {Function | false} replacers.string.fn
+ * @property {Object} replacers.number
+ * @property {Boolean} replacers.number.console
+ * @property {Function | false} replacers.number.fn
+ * @property {Object} replacers.object
+ * @property {Boolean} replacers.object.console
+ * @property {Function | false} replacers.object.fn
+ * @property {Object} replacers.function
+ * @property {Boolean} replacers.function.console
+ * @property {Function | false} replacers.function.fn
+ */
 
-
-
-
-
-
-
-
-
-    
-
-
-    <section class="readme">
-        <article><h1>Public Record</h1>
-<p>A configurable shared public record of ui environment managed console logging</p>
-<h3>Linked script example:</h3>
-<pre><code>
-let level = 'info';
-let options = {};
-publicRecord.setOptions(options);
-publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);
-// Outputs: This is dynamic message #1
+export default function () {
+    return {
+        replacers: {
+            string: {
+                console: true,
+                fn: false
+            },
+            number: {
+                console: true,
+                fn: false
+            },
+            object: {
+                console: true,
+                fn: false
+            },
+            function: {
+                console: true,
+                fn: false
+            }
+        }
+    };
+}
 </code></pre>
-<h3>ES Module Usage:</h3>
-<pre><code>
-import {createPublicRecord} from "../../dist/createPublicRecord";
-let options = {};
-let publicRecord = createPublicRecord(options);
-let level = 'info';
-
-publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);
-// Outputs: This is dynamic message #1
-</code></pre>
-<h2>Getting Started</h2>
-<p>To begin, clone this project and run</p>
-<pre><code>
-npm install
-npm run release
-</code></pre>
-<p>Then, run a web server such as http-server
-Go to the root of the project to read the documentation</p></article>
+        </article>
     </section>
-
-
 
 
 

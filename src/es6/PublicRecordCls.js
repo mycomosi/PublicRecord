@@ -5,11 +5,14 @@
  */
 import * as S from './public-strings';
 import defaultOptions from './defaultOptions';
+import defaultPrintOptions from './defaultPrintOptions';
 export class PublicRecordCls {
 
     constructor(options) {
         this._options = (options) ? options : defaultOptions();
         this._logs = [];
+
+        if (this._options.banner) this._printConsoleBanner();
     }
 
     /**
@@ -54,25 +57,47 @@ export class PublicRecordCls {
     }
 
     /**
-     *
+     * @param {Object} options - Configuration options for printMessage method.
+     * @param {Function | false} filter - Filter which is run against the entire cache of messages
+     * @param {String} filter.level - Log level of message
+     * @param {String} filter.message - Message (displayed) text of the cached message
+     * @param {Array} filter.args - Array of arguments passed to logMessage when each message was created
      * @return {string|string}
      */
-    printMessages(/*options, filters*/) {
+    printMessages(options, filter) {
+        let opts = options || defaultPrintOptions(),
+            logs = (filter) ? this._logs.filter(filter) : this._logs;
         let out = "\n";
-        for (let log of this._logs) {
+        for (let log of logs) {
             for (let arg of [...log.args]) {
                 switch (typeof arg) {
                     case S.STRING:
-                        log.message = log.message.replace(/%s/, arg);
+                        log.message = (opts.replacers &&
+                            opts.replacers.string &&
+                            opts.replacers.string.fn) ?
+                            opts.replacers.string.fn(log.message) :
+                            log.message.replace(/%s/, arg);
                         break;
                     case S.NUMBER:
-                        log.message = log.message.replace(/%d/, arg);
+                        log.message = (opts.replacers &&
+                            opts.replacers.number &&
+                            opts.replacers.number.fn) ?
+                            opts.replacers.number.fn(log.message) :
+                            log.message.replace(/%d/, arg);
                         break;
                     case S.OBJECT:
-                        log.message = log.message.replace(/%o/, JSON.stringify(arg));
+                        log.message = (opts.replacers &&
+                            opts.replacers.object &&
+                            opts.replacers.object.fn) ?
+                            opts.replacers.object.fn(log.message) :
+                            log.message.replace(/%o/, JSON.stringify(arg));
                         break;
                     case S.FUNCTION:
-                        log.message = log.message.replace(/%o/, S.FUNCTION);
+                        log.message = (opts.replacers &&
+                            opts.replacers.function &&
+                            opts.replacers.function.fn) ?
+                            opts.replacers.function.fn(log.message) :
+                            log.message.replace(/%o/, S.FUNCTION);
 
                 }
             }
@@ -86,5 +111,23 @@ export class PublicRecordCls {
      */
     clearMessages() {
         this._logs = [];
+    }
+
+    /**
+     * Print banner console message
+     * @private
+     */
+    _printConsoleBanner() {
+        if (this._options &&
+            this._options.banner &&
+            this._options.banner.messages &&
+            this._options.banner.messages.length ){
+            for (let m of this._options.banner.messages) {
+                if (m.args) {
+                    window.console[m.type || S.LOG](m.message, ...m.args);
+                }
+                else window.console.info(m.message);
+            }
+        }
     }
 }

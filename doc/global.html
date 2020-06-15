@@ -127,7 +127,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line51">line 51</a>
+        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line59">line 59</a>
     </li></ul></dd>
     
 
@@ -167,7 +167,7 @@
 
 
 <div class="description">
-    Clears log messages
+    Clears ALL log messages from the buffer
 </div>
 
 
@@ -211,7 +211,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line59">line 59</a>
+        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -276,7 +276,7 @@
 
         
 <div class="param-desc">
-    - Web component <public-record> reference to append to dom
+    Web component <public-record> reference to append to dom
 </div>
 
 
@@ -378,7 +378,7 @@
 
         
 <div class="param-desc">
-    options object
+    options object (For more details, see type definition for "options" type definition below)
 </div>
 
 
@@ -415,7 +415,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line34">line 34</a>
+        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line40">line 40</a>
     </li></ul></dd>
     
 
@@ -505,7 +505,171 @@
 
             
 
-            <td class="description last">Log level of message (error, warn, info, debug, log)</td>
+            <td class="description last">Log level of message (error, warn, info, debug, log)
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>error</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Error level log message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>warn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Warning level log message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>info</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Info level log message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>debug</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Debug level log message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>log</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Log level log message (untested)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dir</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Directory level log message (untested)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -528,7 +692,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Message to display and record (includes window.console replacers like %s %n %o %a...)</td>
         </tr>
 
     
@@ -596,7 +760,7 @@
 
     
 
-    <h4 class="name" id="printMessages"><span class="type-signature"></span>printMessages<span class="signature">(options, filters)</span><span class="type-signature"> &rarr; {String}</span></h4>
+    <h4 class="name" id="printMessages"><span class="type-signature"></span>printMessages<span class="signature">(options, filter)</span><span class="type-signature"> &rarr; {string|string}</span></h4>
 
     
 
@@ -608,7 +772,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line44">line 44</a>
+        <a href="publicMethods.js.html">publicMethods.js</a>, <a href="publicMethods.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -698,14 +862,105 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Configuration options for printMessage method.</td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>filters</code></td>
+                <td class="name"><code>filter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">false</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Filter which is run against the entire cache of messages using Array.filter
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>level</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Log level of message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Message (displayed) text of the cached message</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
             
 
             <td class="type">
@@ -721,7 +976,14 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">Array of arguments passed to logMessage when each message was created</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -744,10 +1006,6 @@
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    - Concatinated, formatted, string of all messages in buffer currently
-</div>
-
 
 
 <dl class="param-type">
@@ -756,7 +1014,10 @@
     </dt>
     <dd>
         
-<span class="param-type">String</span>
+<span class="param-type">string</span>
+|
+
+<span class="param-type">string</span>
 
 
     </dd>
@@ -876,7 +1137,7 @@
 
             
 
-            <td class="description last">For more details, see type definition for "options" below</td>
+            <td class="description last">For more details, see type definition for "options" type definition below</td>
         </tr>
 
     
@@ -923,6 +1184,540 @@
         <h3 class="subsection-title">Type Definitions</h3>
 
         
+                
+<h4 class="name" id="defaultPrintOptions">defaultPrintOptions</h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="defaultPrintOptions.js.html">defaultPrintOptions.js</a>, <a href="defaultPrintOptions.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>replacers</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>string</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>console</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">false</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>number</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>console</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">false</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>object</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>console</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">false</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>function</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>console</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fn</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+|
+
+<span class="param-type">false</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
                 
 <h4 class="name" id="options">options</h4>
 
@@ -1138,6 +1933,171 @@
 
         <tr>
             
+                <td class="name"><code>banner</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Banner message(s) to display when the public record is created
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>messages</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Array of banner message configurations to display in the web console
+                <h6>Properties</h6>
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Type of message (log, error, warn, info, debug, dir)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Message to display</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Array of arguments to pass to the console formatter</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>bufferLimit</code></td>
             
 
@@ -1216,7 +2176,7 @@
 
 
 <div class="description">
-    Options
+    Options object used by setOptions method
 </div>
 
 
@@ -1246,6 +2206,28 @@
         debug: false,
         log: false
     },
+    banner: {
+            messages: [
+                {
+                    type: 'warn',
+                    message: `%c- Public Record Notice -`,
+                    args: [
+                        `font-size: 18px; font-weight: bold`
+                    ]
+                },
+                {
+                    type: 'info',
+                    message: `%cIt's a good idea to display a selfxss warning`,
+                    args: [
+                        `font-size: 14px; color: #333333`
+                    ]
+                },
+                {
+                    type: 'info',
+                    message: `To learn more:  https://en.wikipedia.org/wiki/Self-XSS`
+                }
+            ]
+        },
     bufferLimit: 2000,
     sharedWorker: false,
     sharedCallback: false
@@ -1269,7 +2251,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Sat Jun 13 2020 10:33:46 GMT+0200 (CEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Mon Jun 15 2020 07:51:04 GMT+0200 (CEST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

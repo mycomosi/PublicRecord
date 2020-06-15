@@ -9,7 +9,7 @@ export default function (component) {
 
         /**
          * Set options (configuration) into the utility
-         * @param {Object} options - For more details, see type definition for "options" below
+         * @param {Object} options - For more details, see type definition for "options" type definition below
          * @return {Object}
          */
         setOptions: (options) => {
@@ -18,7 +18,7 @@ export default function (component) {
 
         /**
          *
-         * @return {Object} options object
+         * @return {Object} options object (For more details, see type definition for "options" type definition below)
          */
         getOptions() {
             return component.getOptions();
@@ -27,7 +27,13 @@ export default function (component) {
         /**
          *
          * @param {String} level - Log level of message (error, warn, info, debug, log)
-         * @param {String} message
+         * @param {Boolean} level.error - Error level log message
+         * @param {Boolean} level.warn - Warning level log message
+         * @param {Boolean} level.info - Info level log message
+         * @param {Boolean} level.debug - Debug level log message
+         * @param {Boolean} level.log - Log level log message (untested)
+         * @param {Boolean} level.dir - Directory level log message (untested)
+         * @param {String} message - Message to display and record (includes window.console replacers like %s %n %o %a...)
          * @param {*} args - additional arguments such as strings, objects, and numbers to replace in the message
          * @return {string}
          */
@@ -36,17 +42,19 @@ export default function (component) {
         },
 
         /**
-         *
-         * @param {Object} options
-         * @param {Array} filters
-         * @return {String} - Concatinated, formatted, string of all messages in buffer currently
+         * @param {Object} options - Configuration options for printMessage method.
+         * @param {Function | false} filter - Filter which is run against the entire cache of messages using Array.filter
+         * @param {String} filter.level - Log level of message
+         * @param {String} filter.message - Message (displayed) text of the cached message
+         * @param {Array} filter.args - Array of arguments passed to logMessage when each message was created
+         * @return {string|string}
          */
-        printMessages(options, filters) {
-            return component.printMessages(options, filters);
+        printMessages(options, filter) {
+            return component.printMessages(options, filter);
         },
 
         /**
-         * Clears log messages
+         * Clears ALL log messages from the buffer
          */
         clearMessages() {
             component.clearMessages();

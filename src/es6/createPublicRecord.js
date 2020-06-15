@@ -46,14 +46,16 @@ export function createPublicRecord(options) {
             }
 
             /**
-             *
-             * @param options
-             * @param filters
-             * @return {string}
+             * @param {Object} options - Configuration options for printMessage method.
+             * @param {Function | false} filter - Filter which is run against the entire cache of messages
+             * @param {String} filter.level - Log level of message
+             * @param {String} filter.message - Message (displayed) text of the cached message
+             * @param {Array} filter.args - Array of arguments passed to logMessage when each message was created
+             * @return {string|string}
              * @ignore
              */
-            printMessages(options, filters) {
-                return this.cls.printMessages(options, filters);
+            printMessages(options, filter) {
+                return this.cls.printMessages(options, filter);
             }
 
             /**

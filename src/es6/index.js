@@ -5,4 +5,5 @@
  */
 import * as S from './public-strings';
 import {createPublicRecord} from './createPublicRecord';
-window.PublicRecord = createPublicRecord();
+import defaultOptions from './defaultOptions';
+window.PublicRecord = createPublicRecord(defaultOptions());
