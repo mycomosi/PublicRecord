@@ -2,17 +2,17 @@
  *  <public-record> Public recording web component
  *  @Author: Russ Stratfull 2020
  */
-import {PublicRecordCls} from "./PublicRecordCls";
+import {PublicRecord} from "./public-record";
 import * as S from './public-strings';
-import moduleMethods from './publicMethods';
+import moduleMethods from './public-methods';
 
-export function createPublicRecord(options) {
+export function publicCreate(options) {
     function setOptions(options) {
         return class PublicRecordComponent extends HTMLElement {
 
             constructor() {
                 super();
-                this.cls = new PublicRecordCls(options);
+                this.cls = new PublicRecord(options);
             }
 
             /**
@@ -49,7 +49,7 @@ export function createPublicRecord(options) {
              * @param {Object} options - Configuration options for printMessage method.
              * @param {Function | false} filter - Filter which is run against the entire cache of messages
              * @param {String} filter.level - Log level of message
-             * @param {String} filter.message - Message (displayed) text of the cached message
+             * @param {String} filter.message - Messages (displayed) text of the cached message
              * @param {Array} filter.args - Array of arguments passed to logMessage when each message was created
              * @return {string|string}
              * @ignore
@@ -65,6 +65,7 @@ export function createPublicRecord(options) {
             clearMessages() {
                 this.cls.clearMessages();
             }
+
 
             // Lifecycle callbacks
             // todo...

@@ -6,11 +6,18 @@
 import * as S from './public-strings';
 import defaultOptions from './defaultOptions';
 import defaultPrintOptions from './defaultPrintOptions';
-export class PublicRecordCls {
+import publicWorker from './public-worker';
+import {Messages} from "./shared/messages";
+
+export class PublicRecord {
 
     constructor(options) {
         this._options = (options) ? options : defaultOptions();
         this._logs = [];
+
+        if (options.sharedWorker) {
+            this._inlineSharedWorker();
+        }
 
         if (this._options.banner) this._printConsoleBanner();
     }
@@ -45,6 +52,18 @@ export class PublicRecordCls {
             this._options.loglevel[_level]) {
             let _message = `[${_level}] [${Date.now()}] ${message}`;
             window.console[_level](_message, ...args);
+
+            // Record message
+
+        }
+    }
+
+
+    _recordMessage(level, message, ...args) {
+        if (this._options.sharedWorker) {
+
+        }
+        else {
             this._logs.push({
                 level: _level,
                 message: _message,
@@ -130,4 +149,35 @@ export class PublicRecordCls {
             }
         }
     }
+
+    /**
+     *
+     * @private
+     */
+    _inlineSharedWorker() {
+        let url = `${S.B64PREFIX}${btoa(publicWorker())}`;
+        this._sharedWorker = new SharedWorker(url, S.PUBLIC_WORKER);
+        this._sharedWorker.port.start();
+        this._sharedWorker.port.postMessage(Messages.request(S.OPEN));
+        this._sharedWorker.port.onmessage = (event) => {
+            this._processResponse(event);
+        };
+    }
+
+    /**
+     *
+     * @param event
+     * @private
+     */
+    _processResponse(event) {
+        switch (event.data.type) {
+            case S.OPEN:
+                this._sharedWorker.pid = event.data.id;
+                break;
+            case S.RESP:
+
+                break;
+        }
+    }
+
 }

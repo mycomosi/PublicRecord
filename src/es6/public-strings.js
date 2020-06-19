@@ -1,20 +1,26 @@
 
 export const
-    PUBLIC_RECORD_NAME = 'PublicRecordCls',
+    PUBLIC_RECORD_NAME = 'PublicRecord',
     PUBLIC_RECORD_COMPONENT = 'public-record',
-
     LOG = 'log',
     ERROR = 'error',
     WARN = 'warn',
     INFO = 'info',
     DEBUG = 'debug',
     DIR = 'dir',
-
     GET = 'get',
     PRINT = 'print',
     STRING = 'string',
     NUMBER = 'number',
     OBJECT = 'object',
     FUNCTION = 'function',
-
-    DIV = 'div';
+    DIV = 'div',
+    TEXT_JS = 'text/javascript',
+    B64PREFIX = 'data:application/javascript;base64,',
+    PUBLIC_WORKER = 'PublicWorker',
+    // Messages types
+    OK = 'OK',
+    OPEN = 'OPEN',
+    ADDR = 'ADDR',
+    RESP = 'RESP',
+    REC = 'REC';

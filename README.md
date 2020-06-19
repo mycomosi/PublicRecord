@@ -12,9 +12,9 @@ publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);
 
 ### ES Module Usage:
 <pre><code>
-import {createPublicRecord} from "../../dist/createPublicRecord";
+import {publicCreate} from "../../dist/publicCreate";
 let options = {};
-let publicRecord = createPublicRecord(options);
+let publicRecord = publicCreate(options);
 let level = 'info';
 
 publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);

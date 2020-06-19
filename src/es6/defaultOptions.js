@@ -16,10 +16,10 @@
  * @property {Object} banner - Banner message(s) to display when the public record is created
  * @property {Array} banner.messages - Array of banner message configurations to display in the web console
  * @property {String} banner.messages.type - Type of message (log, error, warn, info, debug, dir)
- * @property {String} banner.messages.message - Message to display
+ * @property {String} banner.messages.message - Messages to display
  * @property {Array} banner.messages.args - Array of arguments to pass to the console formatter
  * @property {Number} bufferLimit - Maximum size of lot messages to keep in browser buffer before deleting them
- * @property {Boolean} sharedWorker - Enable sharedworker (puts all windows into one stream of logging
+ * @property {Boolean} sharedWorker - Enable sharedworker (puts all windows into one stream of logging)
  * @property {Function | false} sharedCallback - Callback funtion to run on ALL messages being managed in publicRecord
  * @example
  // Default options configuration
@@ -93,7 +93,7 @@ export default function () {
             ]
         },
         bufferLimit: 2000,
-        sharedWorker: false,
+        sharedWorker: true,
         sharedCallback: false
     };
 }

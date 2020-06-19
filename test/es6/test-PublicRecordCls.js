@@ -1,11 +1,11 @@
 /* eslint-env node, mocha */
 /* global expect sinon*/
 
-import {PublicRecordCls} from "../../src/es6/PublicRecordCls";
+import {PublicRecord} from "../../src/es6/public-record";
 import defaultOptions from "../../src/es6/defaultOptions";
 
 
-describe('PublicRecordCls', function () {
+describe('PublicRecord', function () {
 
     'use strict';
 
@@ -33,7 +33,7 @@ describe('PublicRecordCls', function () {
             options2 = { two: 2 };
 
         // when
-        PublicRecord = new PublicRecordCls();
+        PublicRecord = new PublicRecord();
         PublicRecord.setOptions(options1);
         PublicRecord.setOptions(options2);
         let opts = PublicRecord.getOptions();
@@ -70,7 +70,7 @@ describe('PublicRecordCls', function () {
         };
 
         // when
-        PublicRecord = new PublicRecordCls(options);
+        PublicRecord = new PublicRecord(options);
         PublicRecord.logMessage(level, msg1, arg1, arg2);
 
         // then
@@ -91,7 +91,7 @@ describe('PublicRecordCls', function () {
         // given
 
         // when
-        // PublicRecord = new PublicRecordCls();
+        // PublicRecord = new PublicRecord();
         // PublicRecord.clearMessages();
 
         // then

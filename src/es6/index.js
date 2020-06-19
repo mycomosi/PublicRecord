@@ -4,6 +4,6 @@
  *  @Author Russ Stratfull 2020
  */
 import * as S from './public-strings';
-import {createPublicRecord} from './createPublicRecord';
+import {publicCreate} from './public-create';
 import defaultOptions from './defaultOptions';
-window.PublicRecord = createPublicRecord(defaultOptions());
+window.PublicRecord = publicCreate(defaultOptions());

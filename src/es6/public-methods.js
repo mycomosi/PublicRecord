@@ -33,7 +33,7 @@ export default function (component) {
          * @param {Boolean} level.debug - Debug level log message
          * @param {Boolean} level.log - Log level log message (untested)
          * @param {Boolean} level.dir - Directory level log message (untested)
-         * @param {String} message - Message to display and record (includes window.console replacers like %s %n %o %a...)
+         * @param {String} message - Messages to display and record (includes window.console replacers like %s %n %o %a...)
          * @param {*} args - additional arguments such as strings, objects, and numbers to replace in the message
          * @return {string}
          */
@@ -45,7 +45,7 @@ export default function (component) {
          * @param {Object} options - Configuration options for printMessage method.
          * @param {Function | false} filter - Filter which is run against the entire cache of messages using Array.filter
          * @param {String} filter.level - Log level of message
-         * @param {String} filter.message - Message (displayed) text of the cached message
+         * @param {String} filter.message - Messages (displayed) text of the cached message
          * @param {Array} filter.args - Array of arguments passed to logMessage when each message was created
          * @return {string|string}
          */
@@ -66,6 +66,7 @@ export default function (component) {
          */
         component: () => {
             return component;
-        }
+        },
+
     };
 }

@@ -26,13 +26,6 @@
 </nav>
 
 <div id="main">
-    
-
-    
-
-
-
-    
 
 
 
@@ -42,7 +35,14 @@
 
 
 
-    
+
+
+
+
+
+
+
+
 
 
     <section class="readme">
@@ -58,9 +58,9 @@ publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);
 </code></pre>
 <h3>ES Module Usage:</h3>
 <pre><code>
-import {createPublicRecord} from "../../dist/createPublicRecord";
+import {publicCreate} from "../../dist/publicCreate";
 let options = {};
-let publicRecord = createPublicRecord(options);
+let publicRecord = publicCreate(options);
 let level = 'info';
 
 publicRecord.logMessage(level, 'This is %s message #%d', 'dynamic', 1);

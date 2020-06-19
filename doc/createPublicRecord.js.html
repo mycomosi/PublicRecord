@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>createPublicRecord.js - Documentation</title>
+    <title>publicCreate Documentation</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -26,32 +26,31 @@
 </nav>
 
 <div id="main">
-    
-    <h1 class="page-title">createPublicRecord.js</h1>
-    
 
-    
+    <h1 class="page-title">public-create.js
 
 
 
-    
+
+
+
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
  *  &lt;public-record> Public recording web component
  *  @Author: Russ Stratfull 2020
  */
-import {PublicRecordCls} from "./PublicRecordCls";
+import {PublicRecord} from "./PublicRecord";
 import * as S from './public-strings';
 import moduleMethods from './publicMethods';
 
-export function createPublicRecord(options) {
+export function publicCreate(options) {
     function setOptions(options) {
         return class PublicRecordComponent extends HTMLElement {
 
             constructor() {
                 super();
-                this.cls = new PublicRecordCls(options);
+                this.cls = new PublicRecord(options);
             }
 
             /**
