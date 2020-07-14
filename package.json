@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Public logging library and web component which keeps a public record of log messages and data",
   "main": "dist/public-record.js",
+  "module": "dist/public-record.js",
   "files": [
     "dist/public-record.js",
     "dist/public-record.min.js"
