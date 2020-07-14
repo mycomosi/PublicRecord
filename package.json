@@ -1,6 +1,6 @@
 {
   "name": "public-record",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Public logging library and web component which keeps a public record of log messages and data",
   "main": "dist/public-record.js",
   "module": "dist/public-record.js",
